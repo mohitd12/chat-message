@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Setup WebSocket</title>
+    <style>
+        *, html {margin: 0; padding: 0; box-sizing: border-box; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        section {
+            height: 100vh;
+            width: 100vw;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            text-align: center;
+        }
+        .title {
+            background-color: #eee;
+            width: 100%;
+            padding: 0.8em;
+        }
+        #message {
+            background-color: #fff;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+        ul {
+            list-style-type: none;
+            text-align: left;
+            padding: 0.7em;
+            padding-left: 1em;
+        }
+        form {
+            display: grid;
+            grid-template-columns: minmax(300px, 92%) 1fr;
+            padding: 5px;
+            column-gap: 3px;
+        }
+        input {
+            padding: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">
+            <h1>Real-time Messages</h1>
+        </div>
+        <div id="message">
+            <ul id="msg-list">
+            </ul>
+        </div>
+        <div class="form-wrap">
+            <form id="form">
+                <input type="text" placeholder="Type your message..." name="message" id="input" autofocus />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <script src="mysoc.js"></script>
+</body>
+</html>
